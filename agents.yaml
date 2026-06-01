@@ -2,6 +2,13 @@
 # Each agent definition: name, emoji, model, soul file, description, optional skills
 
 agents:
+  ceo:
+    emoji: 🤖
+    model: ollama/glm-5.1:cloud
+    soul: agents/ceo/SOUL.md
+    description: CEO router - orchestrates and dispatches to specialist agents
+    memory: shared/memory/daily
+
   health:
     emoji: 🏥
     model: ollama/glm-5.1:cloud
