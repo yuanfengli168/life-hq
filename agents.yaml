@@ -1,0 +1,68 @@
+# LifeHQ Agent Registry
+# Each agent definition: name, emoji, model, soul file, description, optional skills
+
+agents:
+  health:
+    emoji: 🏥
+    model: ollama/glm-5.1:cloud
+    soul: agents/health/SOUL.md
+    description: Health, fitness, diet, medical reminders
+    memory: shared/memory/health
+
+  work:
+    emoji: 💼
+    model: ollama/glm-5.1:cloud
+    soul: agents/work/SOUL.md
+    description: Tasks, meetings, career, productivity
+    memory: shared/memory/daily
+
+  money:
+    emoji: 💰
+    model: ollama/glm-5.1:cloud
+    soul: agents/money/SOUL.md
+    description: Budget, Splitwise, investments, PayNow
+    memory: shared/memory/financial
+    skills:
+      - auto-settle
+
+  mood:
+    emoji: 🧘
+    model: ollama/glm-5.1:cloud
+    soul: agents/mood/SOUL.md
+    description: Mood, stress, journaling, mental wellness
+    memory: shared/memory/mood
+
+  parenting:
+    emoji: 👶
+    model: ollama/glm-5.1:cloud
+    soul: agents/parenting/SOUL.md
+    description: Baby care, kids, schedules, milestones
+    memory: shared/memory/family
+
+  marriage:
+    emoji: ❤️
+    model: ollama/glm-5.1:cloud
+    soul: agents/marriage/SOUL.md
+    description: Relationship, communication, date nights
+    memory: shared/memory/family
+
+  books:
+    emoji: 📚
+    model: ollama/glm-5.1:cloud
+    soul: agents/books/SOUL.md
+    description: Reading list, notes, recommendations
+    memory: shared/memory/daily
+
+  fun:
+    emoji: 🎮
+    model: ollama/glm-5.1:cloud
+    soul: agents/fun/SOUL.md
+    description: Entertainment, hobbies, travel, downtime
+    memory: shared/memory/daily
+
+  other:
+    emoji: 🤷
+    model: ollama/glm-5.1:cloud
+    soul: agents/other/SOUL.md
+    description: Catch-all for everything else
+    memory: shared/memory/daily
