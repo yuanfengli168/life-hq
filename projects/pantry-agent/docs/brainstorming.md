@@ -61,6 +61,8 @@ Trigger: a natural-language message like _"toilet paper almost finished"_.
 ### 3.2 Scraping vs paid services
 
 - Found `realdataapi.com/ntuc-fairprice-grocery-scraper.php` — a third-party paid scraper. **Decision: not using it.** Reasons: cost overkill for personal use, ToS risk, and the same job can be done with a small Node.js script against FairPrice's own product pages.
+- Found `actowizsolutions.com/redmart-fairprice-grocery-price-intelligence-singapore.php` — an Indian B2B scraping-as-a-service company. **Decision: not using it.** Reasons: enterprise pricing, "CAPTCHA solver + proxy rotation" approach that will get blocked, no self-serve API, and the "sample data" in their marketing copy uses fake SKUs (e.g. `SKU-FP-000321`).
+- Both pages are useful only as **signal that the niche exists** — not as building blocks.
 - Better path: a small, polite scraper with rate limiting, focused only on the SKUs in our catalogue.
 
 ### 3.3 Product matching
@@ -97,6 +99,8 @@ Trigger: a natural-language message like _"toilet paper almost finished"_.
 ### 2026-06-17
 - User wants an agent that checks FairPrice + RedMart prices against past purchases for the same item.
 - Identified `realdataapi.com` as a third-party paid option. **Rejected** — overkill, ToS concerns, no real benefit over a small self-hosted scraper.
+- Identified `actowizsolutions.com` as a B2B scraping service. **Rejected** — enterprise pricing, aggressive scraping techniques (CAPTCHA solvers, proxy rotation) that will get blocked, no self-serve API, fake SKUs in their sample data.
+- Pattern: both sites are SEO landing pages from scraping-service companies ranking for "FairPrice scraper" / "RedMart API" queries. Useful as competitive signal, useless as building blocks.
 - Decision: Apache 2.0 license, open source, project to live in `life-hq/projects/pantry-agent/` (can be split into its own repo later).
 
 ---
@@ -109,6 +113,7 @@ Trigger: a natural-language message like _"toilet paper almost finished"_.
 | 2 | Reject `realdataapi.com`              | 2026-06-17 | ✅ confirmed |
 | 3 | MVP scope: FairPrice + RedMart        | 2026-06-17 | ✅ confirmed |
 | 4 | Compare with Cold Storage / Sheng Siong | 2026-06-17 | ⏳ stretch |
+| 5 | Reject `actowizsolutions.com`          | 2026-06-17 | ✅ confirmed |
 
 ---
 
